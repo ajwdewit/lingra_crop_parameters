@@ -106,6 +106,33 @@ CropParameters:
               - Remaining LAI after harvesting - not used by PCSE/LINGRA as this is an agromanagement input but
                 included here for completeness
               - ['-']
+            TillerFormRateA0:
+              - 0.335
+              - A parameter in the equation for tiller formation rate valid up till
+                7 days after harvest
+              - ['d-1']
+            TillerFormRateB0:
+              - 0.067
+              - B parameter in the equation for tiller formation rate valid up till
+                7 days after harvest
+              - ['d-1']
+            TillerFormRateA8:
+              - 0.867
+              - A parameter in the equation for tiller formation rate starting from
+                8 days after harvest
+              - ['d-1']
+            TillerFormRateB8:
+              - 0.183
+              - B parameter in the equation for tiller formation rate starting from
+                8 days after harvest
+              - ['d-1']
+            TSUMmax:
+              - 600.
+              - Temperature sum to reach maximum grass development stage.
+              - ['C.d']
+            #
+            # Water Use
+            #
             CFET:
             - 1.00
             - correction factor transpiration rate
