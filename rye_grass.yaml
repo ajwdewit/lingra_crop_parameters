@@ -15,7 +15,7 @@ Metadata: &meta
     Contributor:
     Contact: allard.dewit@wur.nl
     Publisher: Wageningen Environmental Research
-    Title: Parameter sets for the LINGRA grassland simulation model
+    Title: Parameter sets for the LINGRA/LINGRA-N grassland simulation model
     Date: 2021-06-23
     Language: EN
     Format: YAML
@@ -53,14 +53,6 @@ CropParameters:
               - [-20.0, 0.0, 6.0, 0.0, 9.0, 1.0, 40.0, 1.0]
               - Reduction function on LUE for soil temperature
               - ['C', '-']
-            NamountLV:
-              - 3.34
-              - Actual nitrogen content of leaves
-              - ['kg kg-1']
-            NmaxLV:
-              - 3.34
-              - Maximum nitrogen content of leaves
-              - ['kg kg-1']
             PartitioningRootsTB:
               - [-10.0, 0.263, 0.0, 0.263, 1.0, 0.165]
               - Fraction to roots as function of transpiration factor
@@ -130,6 +122,51 @@ CropParameters:
               - 600.
               - Temperature sum to reach maximum grass development stage.
               - ['C.d']
+            RDRshading:
+              - 0.030
+              - Maximum relative death rate of leaves due to self-shading
+              - ['-']
+            RDRdrought:
+              - 0.050
+              - Maximum relative death rate of leaves due to water stress
+              - ['-']
+            RDRnitrogen:
+              - 0.050
+              - Maximum relative death rate of leaves due to nitrogen stress
+              - ['-']
+            # Nitrogen parameters
+            NMAXLV_TB:
+              - [0.0, 0.035, 5.0, 0.035]
+              - Maximum N concentration in leaves as a function of development stage
+              - ['-', 'mass.mass-1']
+            NMAXRT_FR:
+              - 0.5
+              - maximum N concentration in roots as fraction of maximum N concentration in leaves
+              - ['-']
+            NRESIDLV:
+              - 0.01
+              - residual N fraction in leaves [kg N kg-1 dry biomass]
+              - ['mass.mass-1']
+            NRESIDRT:
+              - 0.005
+              - residual N fraction in roots [kg N kg-1 dry biomass]
+              - ['mass.mass-1']
+            NUPTAKE_MAX:
+              - 9.0
+              - Maximum daily N uptake rate
+              - ['kg.ha-1.d-1']
+            NSLA:
+              - 0.5
+              - coefficient for the effect of N stress on SLA reduction
+              - ['-']
+            NLUE:
+              - 1.10
+              - coefficient for the reduction of gross CO2 assimilation rate due to N stress
+              - ['-']
+            NCRIT_FR:
+              - 1.00
+              - Critical N concentration as fraction of maximum N concentration
+              - ['-']
             #
             # Water Use
             #
